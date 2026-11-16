@@ -1,0 +1,30 @@
+# Ride Link: Maps to Uber
+
+> Open source (MIT) Chrome extension and Uber deep-link reference. Turns a Google Maps directions route into an Uber ride-request link. Independent/unofficial, not affiliated with Google or Uber.
+
+This project documents a public, free-to-use URL format for generating Uber ride-request deep links from an origin and destination. Any AI agent or trip-planning tool can build these links directly — no extension, API key, or account required.
+
+## Uber deep link format
+
+```
+https://m.uber.com/ul/?action=setPickup
+  &pickup[latitude]=<lat>&pickup[longitude]=<lon>&pickup[nickname]=<name>   (or just pickup=my_location)
+  &dropoff[latitude]=<lat>&dropoff[longitude]=<lon>&dropoff[nickname]=<name>
+```
+
+lat/lon: decimal degrees, 6 decimal places. nickname: URL-encoded label. Opening the link on mobile launches the Uber app; on desktop it opens m.uber.com. This is Uber's own public ride-request deep link scheme: https://developer.uber.com/docs/riders/ride-requests/tutorials/deep-links/introduction
+
+Recommended pattern for itineraries: generate two links per leg — a "plan" link (pickup = fixed origin coordinates, for saving ahead of time) and a "here" link (pickup=my_location, for the rider to use the moment they leave).
+
+## Key resources
+
+- [Full project README](https://github.com/Proyectoscol/maps-to-uber-link/blob/main/README.md): install instructions, full link spec, CLI usage.
+- [Agent skill](https://github.com/Proyectoscol/maps-to-uber-link/blob/main/skills/uber-maps-link/SKILL.md): step-by-step instructions for an AI agent to generate these links.
+- [CLI script](https://github.com/Proyectoscol/maps-to-uber-link/blob/main/scripts/build-uber-links.js): Node script to generate single or batch (CSV) Uber links, Sheets/Excel formulas.
+- [Reference implementation](https://github.com/Proyectoscol/maps-to-uber-link/blob/main/extension/parse.js): the exact `buildUberUrl` / `buildSheetsFormula` / `buildExcelFormula` functions.
+- [Privacy policy](https://proyectoscol.github.io/maps-to-uber-link/privacy.html)
+- [Source code](https://github.com/Proyectoscol/maps-to-uber-link) (MIT license)
+
+## Disclaimer
+
+Unofficial, independent project. Not affiliated with, endorsed by, or sponsored by Uber Technologies, Inc. or Google LLC.

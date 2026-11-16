@@ -1,0 +1,11 @@
+{
+  "extName": {
+    "message": "Ride Link from Maps to Uber"
+  },
+  "extDesc": {
+    "message": "Turn a Google Maps route into an Uber link, QR code and Sheets or Excel formula. Plan trips faster. Unofficial, not affiliated."
+  },
+  "actionTitle": {
+    "message": "Ride Link from Maps to Uber: settings"
+  }
+}

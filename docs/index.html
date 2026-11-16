@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ride Link — Maps to Uber</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Chrome extension that turns a Google Maps route into an Uber deep link, QR code, and Sheets/Excel formula. Open source, MIT licensed, unofficial.">
+<link rel="icon" href="assets/icon128.png">
+<meta property="og:title" content="Ride Link — Maps to Uber">
+<meta property="og:description" content="Turn a Google Maps route into an Uber deep link, QR code, and Sheets/Excel formula.">
+<meta property="og:image" content="https://proyectoscol.github.io/maps-to-uber-link/assets/screenshot.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://proyectoscol.github.io/maps-to-uber-link/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://proyectoscol.github.io/maps-to-uber-link/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Ride Link: Maps to Uber",
+  "applicationCategory": "BrowserApplication",
+  "operatingSystem": "Chrome",
+  "description": "Turns a Google Maps directions route into an Uber ride-request deep link, QR code, and Google Sheets/Excel formula.",
+  "url": "https://proyectoscol.github.io/maps-to-uber-link/",
+  "codeRepository": "https://github.com/Proyectoscol/maps-to-uber-link",
+  "license": "https://github.com/Proyectoscol/maps-to-uber-link/blob/main/LICENSE",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isAccessibleForFree": true
+}
+</script>
+<style>
+  :root{
+    --bg:#ffffff; --fg:#1b1b1f; --muted:#5f6368; --accent:#0b6b53; --card:#f5f6f7; --border:#e3e4e8;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#111214; --fg:#f0f0f2; --muted:#a4a7ad; --accent:#3ddc97; --card:#1b1c1f; --border:#2a2b2f; }
+  }
+  *{box-sizing:border-box}
+  body{background:var(--bg);color:var(--fg);margin:0;font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+  .wrap{max-width:860px;margin:0 auto;padding:40px 20px 80px}
+  header{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+  header img{width:48px;height:48px;border-radius:10px}
+  h1{font-size:clamp(28px,4vw,38px);margin:0}
+  .tagline{color:var(--muted);font-size:18px;margin:6px 0 28px}
+  .cta{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 36px}
+  .btn{display:inline-block;padding:11px 18px;border-radius:8px;text-decoration:none;font-weight:600;border:1px solid var(--border)}
+  .btn.primary{background:var(--accent);color:#06241c;border-color:var(--accent)}
+  .btn.secondary{color:var(--fg)}
+  figure{margin:0 0 40px}
+  figure img{width:100%;height:auto;border-radius:12px;border:1px solid var(--border);display:block}
+  figcaption{color:var(--muted);font-size:14px;margin-top:8px}
+  h2{margin-top:48px;font-size:22px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:18px 0}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+  .card h3{margin:0 0 6px;font-size:15px}
+  .card p{margin:0;color:var(--muted);font-size:14px}
+  code,pre{background:var(--card);border:1px solid var(--border);border-radius:8px}
+  code{padding:2px 6px;font-size:14px}
+  pre{padding:14px 16px;overflow-x:auto;font-size:13.5px;line-height:1.5}
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border)}
+  footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--border);color:var(--muted);font-size:13.5px}
+  a{color:var(--accent)}
+  .disclaimer{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;color:var(--muted);font-size:13.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="assets/icon128.png" alt="">
+    <h1>Ride Link: Maps to Uber</h1>
+  </header>
+  <p class="tagline">Turn a Google Maps route into an Uber link, QR code, and a Sheets/Excel formula — in one click.</p>
+
+  <div class="cta">
+    <a class="btn primary" href="https://github.com/Proyectoscol/maps-to-uber-link">View source on GitHub</a>
+    <a class="btn secondary" href="https://github.com/Proyectoscol/maps-to-uber-link#install-unpacked-while-awaiting-chrome-web-store-review">Install (Chrome Web Store pending review)</a>
+    <a class="btn secondary" href="privacy.html">Privacy policy</a>
+  </div>
+
+  <figure>
+    <img src="assets/screenshot.png" alt="Google Maps directions page with the Ride Link panel open, showing a generated Uber link, Copy for Sheets/Excel buttons, and a QR code." loading="eager">
+    <figcaption>The panel appears right on top of Google Maps once you open a route.</figcaption>
+  </figure>
+
+  <h2>What it does</h2>
+  <div class="cards">
+    <div class="card"><h3>Reads the route</h3><p>Parses origin, destination and stops straight from the Google Maps directions URL — no typing addresses twice.</p></div>
+    <div class="card"><h3>Two links per trip</h3><p><strong>Plan</strong>: pickup fixed to the map's origin. <strong>My location</strong>: pickup is wherever the rider is when they open the link.</p></div>
+    <div class="card"><h3>Sheets & Excel ready</h3><p>Copy a <code>=HYPERLINK(...)</code> formula sized correctly for Google Sheets or Excel's 255-character string limit.</p></div>
+    <div class="card"><h3>QR code</h3><p>Scan with a phone to hand off the link instantly — no typing on a small screen.</p></div>
+  </div>
+
+  <h2>For AI agents & trip planners</h2>
+  <p>Planning a trip programmatically? You don't need the extension — the Uber deep link format is public. Read <a href="llms.txt">llms.txt</a> or the ready-to-use agent skill in the repo: <a href="https://github.com/Proyectoscol/maps-to-uber-link/blob/main/skills/uber-maps-link/SKILL.md">skills/uber-maps-link/SKILL.md</a>, or run the bundled CLI to batch-generate links from a spreadsheet of addresses.</p>
+  <pre>https://m.uber.com/ul/?action=setPickup
+  &amp;pickup[latitude]=&lt;lat&gt;&amp;pickup[longitude]=&lt;lon&gt;&amp;pickup[nickname]=&lt;name&gt;   (or pickup=my_location)
+  &amp;dropoff[latitude]=&lt;lat&gt;&amp;dropoff[longitude]=&lt;lon&gt;&amp;dropoff[nickname]=&lt;name&gt;</pre>
+
+  <table>
+    <tr><th>Link</th><th>Pickup</th><th>Use case</th></tr>
+    <tr><td>Plan</td><td>fixed origin coordinates</td><td>save in an itinerary / sheet ahead of time</td></tr>
+    <tr><td>My location</td><td><code>pickup=my_location</code></td><td>hand to the rider to use right when they leave</td></tr>
+  </table>
+
+  <h2>Support this project</h2>
+  <p>Free, open source, no ads, no tracking. If it saved you time:</p>
+  <div class="cta">
+    <a class="btn primary" href="https://www.paypal.com/ncp/payment/HWXHX4GDYU5F2">Leave a tip via PayPal</a>
+  </div>
+
+  <h2>Disclaimer</h2>
+  <p class="disclaimer">Independent, unofficial project. Not affiliated with, endorsed by, or sponsored by Uber Technologies, Inc. or Google LLC. "Uber" and "Google Maps" are trademarks of their respective owners. The extension does not collect or transmit personal data to us — see the <a href="privacy.html">privacy policy</a>. Always confirm pickup/dropoff before requesting a ride. MIT licensed, use at your own risk.</p>
+
+  <footer>
+    <p>© 2026 Camilo Castillo — <a href="https://github.com/Proyectoscol/maps-to-uber-link/blob/main/LICENSE">MIT License</a> · <a href="https://github.com/Proyectoscol/maps-to-uber-link">Source on GitHub</a> · <a href="privacy.html">Privacy</a></p>
+  </footer>
+</div>
+</body>
+</html>

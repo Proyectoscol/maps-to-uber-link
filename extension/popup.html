@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { width: 310px; margin: 0; padding: 14px; font: 13px/1.4 Roboto, Arial, sans-serif; color: #202124; }
+    h1 { font-size: 15px; margin: 0 0 10px; }
+    label { display: block; margin-top: 12px; font-weight: 600; }
+    select { width: 100%; margin-top: 4px; padding: 6px; font-size: 13px; }
+    details { margin-top: 14px; }
+    summary { cursor: pointer; font-weight: 600; }
+    small { display: block; color: #5f6368; margin-top: 6px; }
+    #saved { color: #188038; height: 16px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1 data-i18n="popupTitle"></h1>
+
+  <label for="lang" data-i18n="lang"></label>
+  <select id="lang">
+    <option value="auto" data-i18n="langAuto"></option>
+    <option value="en">English</option>
+    <option value="es">Español</option>
+  </select>
+
+  <label for="defaultMode" data-i18n="defaultTab"></label>
+  <select id="defaultMode">
+    <option value="plan" data-i18n="defTabPlan"></option>
+    <option value="here" data-i18n="defTabHere"></option>
+  </select>
+
+  <details>
+    <summary data-i18n="advanced"></summary>
+    <label for="sheetSep" data-i18n="sheetsSep"></label>
+    <select id="sheetSep">
+      <option value="," data-i18n="sepComma"></option>
+      <option value=";" data-i18n="sepSemi"></option>
+    </select>
+    <label for="excelSep" data-i18n="excelSep"></label>
+    <select id="excelSep">
+      <option value="," data-i18n="sepComma"></option>
+      <option value=";" data-i18n="sepSemi"></option>
+    </select>
+    <small data-i18n="sepHelp"></small>
+  </details>
+
+  <div id="saved"></div>
+  <small data-i18n="disclaimer"></small>
+  <script src="i18n.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

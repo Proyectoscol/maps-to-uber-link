@@ -1,0 +1,119 @@
+#mau-panel {
+  position: fixed;
+  top: 76px;
+  right: 16px;
+  width: 250px;
+  z-index: 2147483000;
+  background: #ffffff;
+  color: #202124;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  font: 13px/1.4 Roboto, Arial, sans-serif;
+  padding: 10px 12px 12px;
+}
+#mau-panel * {
+  box-sizing: border-box;
+}
+#mau-panel .mau-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 14px;
+}
+#mau-panel .mau-toggle {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  padding: 0 4px;
+  color: #5f6368;
+}
+#mau-panel .mau-body.mau-hidden {
+  display: none;
+}
+#mau-panel .mau-tabs {
+  display: flex;
+  margin: 8px 0;
+  background: #f1f3f4;
+  border-radius: 8px;
+  padding: 2px;
+}
+#mau-panel .mau-tab {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  border-radius: 6px;
+  padding: 6px 4px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #5f6368;
+}
+#mau-panel .mau-tab.mau-active {
+  background: #000000;
+  color: #ffffff;
+  font-weight: 600;
+}
+#mau-panel .mau-route {
+  margin: 8px 0;
+  color: #5f6368;
+  font-size: 12px;
+  word-break: break-word;
+}
+#mau-panel .mau-route b {
+  color: #202124;
+}
+#mau-panel .mau-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+#mau-panel .mau-btn {
+  flex: 1 1 auto;
+  border: 1px solid #dadce0;
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 6px 8px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #202124;
+}
+#mau-panel .mau-btn:hover {
+  background: #e8eaed;
+}
+#mau-panel .mau-primary {
+  display: block;
+  width: 100%;
+  background: #000000;
+  color: #ffffff;
+  border: 0;
+  border-radius: 8px;
+  padding: 9px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+#mau-panel .mau-primary:hover {
+  background: #2b2b2b;
+}
+#mau-panel .mau-qr {
+  display: flex;
+  justify-content: center;
+}
+#mau-panel .mau-qr svg {
+  width: 170px;
+  height: 170px;
+}
+#mau-panel .mau-note {
+  text-align: center;
+  color: #5f6368;
+  font-size: 11px;
+  margin-top: 4px;
+}
+#mau-panel .mau-warn {
+  color: #b3261e;
+  font-size: 12px;
+}

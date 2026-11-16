@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Privacy Policy — Ride Link: Maps to Uber</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Privacy policy for the Ride Link: Maps to Uber Chrome extension.">
+<link rel="icon" href="assets/icon128.png">
+<link rel="canonical" href="https://proyectoscol.github.io/maps-to-uber-link/privacy.html">
+<style>
+  :root{ --bg:#ffffff; --fg:#1b1b1f; --muted:#5f6368; --accent:#0b6b53; --border:#e3e4e8; }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#111214; --fg:#f0f0f2; --muted:#a4a7ad; --accent:#3ddc97; --border:#2a2b2f; }
+  }
+  body{background:var(--bg);color:var(--fg);margin:0;font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+  .wrap{max-width:720px;margin:0 auto;padding:40px 20px 80px}
+  h1{font-size:28px}
+  h2{font-size:19px;margin-top:32px}
+  a{color:var(--accent)}
+  code{background:#8883;padding:2px 6px;border-radius:6px}
+  .back{display:inline-block;margin-bottom:24px;color:var(--muted);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">&larr; Back</a>
+  <h1>Privacy Policy — Ride Link: Maps to Uber</h1>
+  <p><em>Last updated: 2026-11-16.</em> This extension is independent and unofficial, not affiliated with Google or Uber.</p>
+
+  <h2>What the extension does</h2>
+  <p>Reads the Google Maps directions URL already open in your tab to find origin, destination and stops. If an address doesn't already have coordinates, it's sent as plain text to the free <a href="https://nominatim.org/">OpenStreetMap Nominatim</a> API to resolve it. The extension then builds an Uber deep link, a QR code, and spreadsheet formulas &mdash; all locally in your browser. Your display preferences (language, default tab, separator) are stored with Chrome's own <code>chrome.storage.sync</code>, inside your Google profile.</p>
+
+  <h2>What it does not do</h2>
+  <p>No server operated by us, no account, no ads, no trackers, no access to pages other than Google Maps directions pages.</p>
+
+  <h2>Third parties</h2>
+  <ul>
+    <li><strong>Nominatim</strong> (nominatim.openstreetmap.org) — receives only the address text you're already viewing. See their <a href="https://operations.osmfoundation.org/policies/nominatim/">usage policy</a>.</li>
+    <li><strong>Uber</strong> (m.uber.com) — only receives data if you click a generated link, same as typing the URL yourself.</li>
+  </ul>
+
+  <h2>Contact</h2>
+  <p>Questions: <a href="https://github.com/Proyectoscol/maps-to-uber-link/issues">open an issue on GitHub</a>.</p>
+</div>
+</body>
+</html>

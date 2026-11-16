@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://proyectoscol.github.io/maps-to-uber-link/sitemap.xml
