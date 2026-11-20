@@ -3,7 +3,7 @@
 Turn a Google Maps route into an Uber deep link, a QR code, and a ready-to-paste Google Sheets / Excel formula. Built for people who plan trips (travel agents, concierges, assistants, families) and want a one-click ride link for every leg of the itinerary — one link to use **now** (pickup = current location) and one to save **for later** (pickup = the exact point on the map).
 
 🔗 **Project site:** https://proyectoscol.github.io/maps-to-uber-link/
-🧩 **Chrome Web Store:** pending review — once published the link will be added here and on the project site.
+🧩 **Chrome Web Store:** https://chromewebstore.google.com/detail/ride-link-from-maps-to-ub/ajaecciledcfpdioilmfgljccclfpdpf
 
 > Unofficial, independent project. Not affiliated with, endorsed by, or sponsored by Uber Technologies, Inc. or Google LLC. "Uber" and "Google Maps" are trademarks of their respective owners. See [DISCLAIMER](#disclaimer--privacy).
 
@@ -18,7 +18,11 @@ Turn a Google Maps route into an Uber deep link, a QR code, and a ready-to-paste
 
 No server, no accounts, no tracking. Geocoding of addresses that aren't already pinned goes directly from your browser to the free [OpenStreetMap Nominatim](https://nominatim.org/) API — see [PRIVACY.md](PRIVACY.md).
 
-## Install (unpacked, while awaiting Chrome Web Store review)
+## Install
+
+**From the Chrome Web Store (recommended):** https://chromewebstore.google.com/detail/ride-link-from-maps-to-ub/ajaecciledcfpdioilmfgljccclfpdpf
+
+**Unpacked, from source:**
 
 1. Download or clone this repo.
 2. Go to `chrome://extensions`, enable **Developer mode**.
